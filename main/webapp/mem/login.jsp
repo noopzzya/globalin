@@ -33,8 +33,7 @@
     }
     
     form {			  	 
-    	font-size: 14px;
-    	height: 250px;           
+        
     }
     
     input {   
@@ -104,8 +103,25 @@
 <body>
 
 <c:choose>
+<c:when test="${loginID ne null}">
+	<c:out value="${loginID}"/>님 환영합니다.
+<%-- 	<jsp:forward page="/index"/>  추후 수정--%>
+</c:when>
 
+<c:otherwise>
+<c:if test="${sessionScope.loginID eq 0}">
+	<script type="text/javascript">
+		alert('비밀번호가 틀렸습니다.');
+	</script>
+</c:if>
 
+<c:if test="${sessionScope.loginID eq -1}">
+	<script type="text/javascript">
+		alert('아이디가 존재하지 않습니다.')
+	</script>
+</c:if>
+
+<form action="mem.do?cmd=loginProc" method="post">
 <div class="loginDiv">로그인</div>
 <div class="loginDivForm">
 	<form action="">
@@ -124,18 +140,18 @@
 		</div>
 		
 		<div>
-			<button class="bt1">
-				<span>로그인</span>
-			</button>
-			
-			<button class="bt2">
-				<span>회원가입</span>
-			</button>
+			<input class="bt1" type="submit" value="로그인">
+		</div>
+		
+		<div>
+			<input class="bt2" type="button" value="회원가입" onclick="javascript:window.location='?cmd=regForm'">
 		</div>
 	</form>
 	
 </div>
 
+</form>
+</c:otherwise>
 </c:choose>
 
 </body>
