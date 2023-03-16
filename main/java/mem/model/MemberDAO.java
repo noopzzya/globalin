@@ -63,15 +63,21 @@ public class MemberDAO {
 			if(rs != null)
 				try {
 					rs.close();
-				}catch (SQLException ex) {}
+				}catch (SQLException ex) {
+					ex.printStackTrace();
+				}
 			if(pstmt != null)
 				try {
 					pstmt.close();
-				} catch (SQLException ex) {}
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
 			if(conn != null)
 				try {
 					conn.close();
-				} catch (SQLException ex) {}
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
 		}
 				
 		return result;
@@ -111,17 +117,23 @@ public class MemberDAO {
 			if(rs != null)
 				try{
 					rs.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(pstmt != null)
 				try{
 					pstmt.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(conn != null)
 				try{
 					conn.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 		}
 		
 		return vecList;
@@ -164,23 +176,29 @@ public class MemberDAO {
 			if(rs != null)
 				try{
 					rs.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(pstmt != null)
 				try{
 					pstmt.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(conn != null)
 				try{
 					conn.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 		}
 		
 		return flag;
 	} // end 메소드
 	
-	// 아이디 비번 비교한 결과를 정수형으로 리턴
+	// 아이디 비번 비교한 결과를 정수형으로 리턴해주는 메소드
 	// 1:로그인 성공, 0:비밀번호 오류, -1:아이디없음
 	public int loginCheck(String id, String pass) {
 		
@@ -199,7 +217,8 @@ public class MemberDAO {
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();			
+			rs = pstmt.executeQuery();
+			
 			
 			if(rs.next()) { // dbPass와 입력한 비밀번호 일치확인
 				String dbPass = rs.getString("pass");
@@ -213,17 +232,23 @@ public class MemberDAO {
 			if(rs != null)
 				try{
 					rs.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(pstmt != null)
 				try{
 					pstmt.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 			
 			if(conn != null)
 				try{
 					conn.close();
-				}catch(SQLException ex){}
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
 		}
 		
 		return check;
@@ -252,14 +277,113 @@ public class MemberDAO {
 				vo.setId(rs.getString("id"));
 				vo.setPass(rs.getString("pass"));
 				vo.setName(rs.getString("name"));
+				vo.setEmail(rs.getString("email"));
 				vo.setPhone(rs.getString("phone"));
-				vo.setEmail(rs.getString("zipcode"));
-				vo.setZipcode(rs.getString("address1"));
-				vo.setZipcode(rs.getString("address2"));
+				vo.setZipcode(rs.getString("zipcode"));
+				vo.setAddress1(rs.getString("address1"));
+				vo.setAddress2(rs.getString("address2"));
 				vo.setUserlike(rs.getString("userlike"));
 			}
 			
 		} catch(Exception ss) {
+			ss.printStackTrace();
+		} finally {
+			if(rs != null)
+				try{
+					rs.close();
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
+			
+			if(pstmt != null)
+				try{
+					pstmt.close();
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
+			
+			if(conn != null)
+				try{
+					conn.close();
+				}catch(SQLException ex){
+					ex.printStackTrace();
+				}
+		}
+		
+		return vo;
+	} // end getMember
+	
+	
+	// 정보수정 클릭 시 데이터베이스 수정처리 할 메소드 구현
+	public void updateMember(MemberVO vo) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			
+			conn = getConnection();
+			String sql = "update member set pass=?, email=?, phone=?, zipcode=?, address1=?, address2=? where id=?";
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, vo.getPass());
+			pstmt.setString(2, vo.getEmail());
+			pstmt.setString(3, vo.getPhone());
+			pstmt.setString(4, vo.getZipcode());
+			pstmt.setString(5, vo.getAddress1());
+			pstmt.setString(6, vo.getAddress2());
+			pstmt.setString(7, vo.getId());
+			
+			pstmt.executeUpdate();
+			
+		} catch (Exception ss) {
+			ss.printStackTrace();
+		} finally {
+			if(pstmt != null)
+				try{
+					pstmt.close();
+				}catch(SQLException ex){}
+			
+			if(conn != null)
+				try{
+					conn.close();
+				}catch(SQLException ex){}
+		}
+	} // end updateMember
+	
+	// 회원탈퇴 버튼 클릭 시 데이터베이스에 회원데이터에서 삭제되는 메소드 구현
+	public int deleteMember(String id, String pass) {
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String dbPass = "";
+		int result = -1;
+		
+		try {
+			
+			conn = getConnection();
+			
+			String sql = "select pass from member where id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id); // 바인딩변수 처리
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dbPass = rs.getString("pass");
+				if(dbPass.equals(pass)) { // 본인확인
+					sql = "delete from member where id=?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, id);
+					pstmt.executeUpdate();
+					result = 1; // 회원탈퇴 성공
+				} else { // 본인확인 실패
+					result = 0;
+				}
+			}
+			
+		} catch (Exception ss) {
 			ss.printStackTrace();
 		} finally {
 			if(rs != null)
@@ -278,9 +402,7 @@ public class MemberDAO {
 				}catch(SQLException ex){}
 		}
 		
-		return vo;
-	} // end getMember
-	
-	
+		return result;
+	} // end deleteMember
 	
 }

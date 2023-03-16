@@ -14,14 +14,14 @@ public class MemberVO {
 	
 	public MemberVO() {}
 
-	public MemberVO(String id, String pass, String name, String phone, String email, String zipcode, String address1,
+	public MemberVO(String id, String pass, String name, String email, String phone, String zipcode, String address1,
 			String address2, String userlike) {
-		super();
+		
 		this.id = id;
 		this.pass = pass;
 		this.name = name;
-		this.phone = phone;
 		this.email = email;
+		this.phone = phone;
 		this.zipcode = zipcode;
 		this.address1 = address1;
 		this.address2 = address2;
@@ -52,20 +52,20 @@ public class MemberVO {
 		this.name = name;
 	}
 
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getZipcode() {

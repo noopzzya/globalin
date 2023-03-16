@@ -31,7 +31,7 @@
 					<c:out value="${id}"/>
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -43,7 +43,7 @@
 					<input class="c_input" placeholder="변경할 비밀번호를 입력해주세요" type="password" value="${pass}">
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -55,7 +55,7 @@
 					<input class="c_input" placeholder="비밀번호를 한번 더 입력해주세요" type="password" value="${pass}">
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -68,7 +68,7 @@
 					<c:out value="${name}"></c:out>
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -80,7 +80,7 @@
 					<input class="c_input" placeholder="이메일을 입력해주세요" type="text" value="${email}">
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -92,7 +92,7 @@
 					<input class="c_input" placeholder="숫자만 입력해주세요" type="text" name="phone" value="${phone}">
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -101,10 +101,10 @@
 					<label class="l_label">우편번호<span class="red_span">*</span></label>
 				</div>
 				<div class="center">
-					<input class="c_input" type="text" onclick="zipCheck()">
+					<input class="c_input" type="text" name="zipcode" value="${zipcode}">
 				</div>
 				<div class="right">
-					<button class="b_right" onclick="zipCheck()"><span>찾기</span></button>
+					<input class="b_right" type="button" value="찾기" onclick="zipCheck()">
 				</div>
 			</div>
 			
@@ -113,10 +113,10 @@
 					<label class="l_label">주소<span class="red_span">*</span></label>
 				</div>
 				<div class="center">
-					<input class="c_input" type="text">
+					<input class="c_input" type="text" name="address1" value="${address1}">
 				</div>
-				<div class="right">
-					<button class="w_right"></button>
+				<diV class="right">
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
@@ -125,17 +125,15 @@
 					<label class="l_label">상세주소</label>
 				</div>
 				<div class="center">
-					<input class="c_input" placeholder="상세주소를 입력해주세요" type="text">
+					<input class="c_input" placeholder="상세주소를 입력해주세요" type="text" name="address2" value="${address2}">
 				</div>
 				<div class="right">
-					<button class="w_right"></button>
+					<input class="w_right" type="button">
 				</div>
 			</div>
 			
 			<div class="c_bottom">
-				<button class="c_button" onclick="inputCheck()">
-					<span>가입하기</span>
-				</button>
+				<input class="c_button" type="button" value="정보수정" onclick="updateCheck()">
 			</div>
 			
 		</div>		

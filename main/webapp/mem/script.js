@@ -68,7 +68,6 @@ function inputCheck(){
 		return;
 	}
 	
-
 	
 	if(document.regForm.phone.value == ""){
 		alert("전화번호를 입력해주세요.");
@@ -90,3 +89,48 @@ function inputCheck(){
 	document.regForm.submit();
 }
 
+function updateCheck(){
+	
+	if(document.regForm.pass.value == ""){
+		alert("비밀번호를 입력해주세요.");
+		document.regForm.pass.focus();
+		return;
+	}
+	
+	if(document.regForm.repass.value == ""){
+		alert("비밀번호를 확인해주세요");
+		document.regForm.repass.focus();
+		return;
+	}
+	
+	if(document.regForm.pass.value != document.regForm.repass.value){
+		alert("비밀번호가 일치하지 않습니다.");
+		document.regForm.repass.focus();
+		return;
+	}
+	
+	if(document.regForm.email.value == ""){
+		alert("이메일을 입력해주세요.");
+		document.regForm.email.focus();
+		return;
+	}
+	
+	if(document.regForm.phone.value == ""){
+		alert("전화번호를 입력해주세요.");
+		document.regForm.phone.focus();
+		return;
+	}
+	
+	if(document.regForm.zipcode.value == ""){
+		alert("우편번호를 입력해주세요.");
+		document.regForm.zipcode.focus();
+		return;
+	}
+	
+	if(document.regForm.address1.value == ""){
+		alert("주소를 입력해주세요.");
+		return;
+	}
+	
+	document.regForm.submit();
+}

@@ -19,6 +19,7 @@ public class ControlServlet extends HttpServlet {
 		
 		request.setCharacterEncoding("utf-8");
 		
+		
 		String cmd = request.getParameter("cmd");
 		
 		if(cmd != null) {
@@ -26,7 +27,7 @@ public class ControlServlet extends HttpServlet {
 			ActionFactory factory = ActionFactory.getInstance();
 			Action action = factory.getAction(cmd);
 			
-			ActionForward af = action.execute(request, response);
+			ActionForward af = action.execute(request, response); 
 			
 			if(af.isRedirect()) {
 				response.sendRedirect(af.getUrl());

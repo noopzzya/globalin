@@ -46,19 +46,35 @@ public class ActionFactory {
 		
 		// loginProc.jsp 생성없이 LoginProcAction에서 처리
 		case "loginProc":
-			action = new LoginProcAction(); 
+			action = new LoginProcAction();
 			break;
 			
 		case "logout":
 			action = new LogoutAction();
 			break;
+		
+		case "modifyForm":
+			action = new ModifyFormAction();
+			break;
+		
+		case "modifyProc":
+			action = new ModifyProcAction();
+			break;
+		
+		case "deleteForm":
+			action = new DeleteFormAction();
+			break;
+						
+		case "deleteProc":
+			action = new DeleteProcAction();
+			break;	
 			
-		}
+		default:
+			action = new LoginFormAction();
+			break;
+		}	
 		
-		
-		
-		
-		
+
 		return action;
 	}
 	
