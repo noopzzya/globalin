@@ -6,10 +6,12 @@
 <meta charset="UTF-8">
 <title>회원탈퇴</title>
 <link href="ect_style.css" rel="stylesheet" type="text/css">
+
 <script type="text/javascript">
 function begin() {
 	document.myForm.pass.focus();
 }
+
 function checkIt(){
 	if(!document.myForm.pass.value){
 		alert("비밀번호를 입력하지 않았습니다.");
@@ -34,7 +36,7 @@ function checkIt(){
 		
 		<div>
 			<input class="bt3" type="submit" value="회원탈퇴">
-			<input class="bt3" type="button" value="취소" onclick="javascript:window.location.href='member.mdo?cmd=login'">
+			<input class="bt3" type="button" value="취소" onclick="javascript:window.location.href='member.do?cmd=login'">
 		</div>
 
 </div>

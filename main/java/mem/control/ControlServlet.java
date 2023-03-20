@@ -18,8 +18,7 @@ public class ControlServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-		
-		
+				
 		String cmd = request.getParameter("cmd");
 		
 		if(cmd != null) {

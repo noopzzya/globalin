@@ -68,13 +68,6 @@ function inputCheck(){
 		return;
 	}
 	
-	
-	if(document.regForm.phone.value == ""){
-		alert("전화번호를 입력해주세요.");
-		document.regForm.phone.focus();
-		return;
-	}
-	
 	if(document.regForm.zipcode.value == ""){
 		alert("우편번호를 입력해주세요.");
 		document.regForm.zipcode.focus();
@@ -112,12 +105,6 @@ function updateCheck(){
 	if(document.regForm.email.value == ""){
 		alert("이메일을 입력해주세요.");
 		document.regForm.email.focus();
-		return;
-	}
-	
-	if(document.regForm.phone.value == ""){
-		alert("전화번호를 입력해주세요.");
-		document.regForm.phone.focus();
 		return;
 	}
 	

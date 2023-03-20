@@ -22,19 +22,18 @@
 	<div >
 		<a href="mem.do?cmd=logout" class="button">로그아웃</a>
 		<a href="mem.do?cmd=modifyForm" class="button">정보수정</a>
-		<a href="mem.do?cmd=deleteForm" class="button">회원탈퇴</a>
-		
+		<a href="mem.do?cmd=deleteForm" class="button">회원탈퇴</a>		
 	</div>
 </c:when>
 
 <c:otherwise>
-<c:if test="${sessionScope.loginID eq 0}">
+<c:if test="${requestScope.check eq 0}">
 	<script type="text/javascript">
 		alert('비밀번호가 틀렸습니다.');
 	</script>
 </c:if>
 
-<c:if test="${sessionScope.loginID eq -1}">
+<c:if test="${requestScope.check eq -1}">
 	<script type="text/javascript">
 		alert('아이디가 존재하지 않습니다.')
 	</script>
@@ -49,7 +48,7 @@
 		</div>
 		
 		<div>
-			<input type="text" name="pass" value="" placeholder="비밀번호를 입력해주세요">
+			<input type="password" name="pass" value="" placeholder="비밀번호를 입력해주세요">
 		</div>
 		
 		<div class="idpw">

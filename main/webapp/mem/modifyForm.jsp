@@ -40,7 +40,7 @@
 					<label class="l_label">비밀번호<span class="red_span">*</span></label>
 				</div>
 				<div class="center">
-					<input class="c_input" placeholder="변경할 비밀번호를 입력해주세요" type="password" value="${pass}">
+					<input class="c_input" placeholder="변경할 비밀번호를 입력해주세요" type="password" name="pass" value="${pass}">
 				</div>
 				<div class="right">
 					<input class="w_right" type="button">
@@ -52,7 +52,7 @@
 					<label class="l_label">비밀번호확인<span class="red_span">*</span></label>
 				</div>
 				<div class="center">
-					<input class="c_input" placeholder="비밀번호를 한번 더 입력해주세요" type="password" value="${pass}">
+					<input class="c_input" placeholder="비밀번호를 한번 더 입력해주세요" type="password" name="repass" value="${pass}">
 				</div>
 				<div class="right">
 					<input class="w_right" type="button">
@@ -77,7 +77,7 @@
 					<label class="l_label">이메일<span class="red_span">*</span></label>
 				</div>
 				<div class="center">
-					<input class="c_input" placeholder="이메일을 입력해주세요" type="text" value="${email}">
+					<input class="c_input" placeholder="이메일을 입력해주세요" type="text" name="email" value="${email}">
 				</div>
 				<div class="right">
 					<input class="w_right" type="button">
