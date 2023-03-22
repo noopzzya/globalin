@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원정보 수정</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<link href="regform.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -24,7 +24,7 @@
 		
 			<div class="div1">
 				<div class="left">
-					<label class="l_label">아이디<span class="red_span">*</span></label>
+					<label class="l_label">아이디</label>
 				</div>
 				<div class="center">
 					<input class="c_input" type="hidden" name="id" value="${id}">
@@ -61,7 +61,7 @@
 			
 			<div class="div1">
 				<div class="left">
-					<label class="l_label">이름<span class="red_span">*</span></label>
+					<label class="l_label">이름</label>
 				</div>
 				<div class="center">
 					<input class="c_input" type="hidden" name="name" value="${name}">
