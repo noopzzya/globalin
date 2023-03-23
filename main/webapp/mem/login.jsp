@@ -16,13 +16,12 @@
 
 <c:choose>
 <c:when test="${loginID ne null}">
+	<div class="loginok">
 	<c:out value="${loginID}"/>님 환영합니다.<br><br>
 <%-- 	<jsp:forward page="/index"/>  추후 수정--%>
 
-	<div >
 		<a href="mem.do?cmd=logout" class="button">로그아웃</a>
-		<a href="mem.do?cmd=modifyForm" class="button">정보수정</a>
-		<a href="mem.do?cmd=deleteForm" class="button">회원탈퇴</a>		
+		<a href="mem.do?cmd=mypage" class="button">마이페이지</a>		
 	</div>
 </c:when>
 
@@ -43,27 +42,27 @@
 <div class="loginDiv">로그인</div>
 <div class="loginDivForm">
 	
-		<div>
-			<input type="text" name="id" value="" placeholder="아이디를 입력해주세요">
-		</div>
-		
-		<div>
-			<input type="password" name="pass" value="" placeholder="비밀번호를 입력해주세요">
-		</div>
-		
-		<div class="idpw">
-			<a>아이디 찾기</a>
-			<span class="spanBorder">|</span>
-			<a>비밀번호 찾기</a>
-		</div>
-		
-		<div>
-			<input class="bt1" type="submit" value="로그인">
-		</div>
-		
-		<div>
-			<input class="bt2" type="button" value="회원가입" onclick="javascript:window.location='?cmd=regForm'">
-		</div>
+	<div>
+		<input type="text" name="id" value="" placeholder="아이디를 입력해주세요">
+	</div>
+	
+	<div>
+		<input type="password" name="pass" value="" placeholder="비밀번호를 입력해주세요">
+	</div>
+	
+	<div class="idpw">
+		<a>아이디 찾기</a>
+		<span class="spanBorder">|</span>
+		<a>비밀번호 찾기</a>
+	</div>
+	
+	<div>
+		<input class="bt1" type="submit" value="로그인">
+	</div>
+	
+	<div>
+		<input class="bt2" type="button" value="회원가입" onclick="javascript:window.location='?cmd=regForm'">
+	</div>
 		
 </div>
 

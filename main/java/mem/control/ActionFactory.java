@@ -68,6 +68,10 @@ public class ActionFactory {
 		case "deleteProc":
 			action = new DeleteProcAction();
 			break;	
+		
+		case "mypage":
+			action = new MypageAction();
+			break;	
 			
 		default:
 			action = new LoginFormAction();

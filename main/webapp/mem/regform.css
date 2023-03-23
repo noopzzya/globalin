@@ -36,6 +36,12 @@ div {
     text-align: right;
 }
 
+.article-modify {
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+    text-align: right;
+}
+
 .div1 {
 	
 	display: inline-flex;
