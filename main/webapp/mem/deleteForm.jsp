@@ -40,11 +40,11 @@ function checkIt(){
 			<div class="left-header">마이페이지</div>
 			<ul>
 				<li>
-					<a class="mp-a" href="mypage.jsp">찜리스트<span class="mp_span">&gt;</span></a>
+					<a class="mp-a" href="mem.do?cmd=mypage">찜리스트<span class="mp_span">&gt;</span></a>
 				</li>
 
 				<li>
-					<a class="mp-a" href="modifyForm.jsp">정보수정<span class="mp_span">&gt;</span></a>
+					<a class="mp-a" href="mem.do?cmd=modifyForm">정보수정<span class="mp_span">&gt;</span></a>
 				</li>
 
 				<li>

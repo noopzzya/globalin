@@ -21,7 +21,7 @@ public class ModifyFormAction implements Action {
 		
 		HttpSession session = request.getSession();
 		String loginID = (String)session.getAttribute("loginID");
-		MemberVO vo = dao.getMember(loginID);
+		MemberVO vo = dao.getMember(loginID); // db정보 호출
 		
 		request.setAttribute("id", vo.getId());
 		request.setAttribute("pass", vo.getPass());

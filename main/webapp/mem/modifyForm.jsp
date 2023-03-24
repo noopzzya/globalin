@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:set var="loginID" value='<%=(String)session.getAttribute("loginID")%>'/>
 
 <!DOCTYPE html>
 <html>
@@ -10,9 +9,10 @@
 <title>정보수정</title>
 <link href="mypage.css" rel="stylesheet" type="text/css">
 <link href="regform.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-
+<form action="member.do?cmd=modifyProc" method="post" name="regForm">
 <c:choose>
 <c:when test="${loginID ne null}">
 
@@ -27,13 +27,13 @@
 			<div class="left-header">마이페이지</div>
 			<ul>
 				<li>
-					<a class="mp-a" href="mypage.jsp">
+					<a class="mp-a" href="mem.do?cmd=mypage">
 						찜리스트
 						<span class="mp_span">&gt;</span>
 					</a>
 				</li>
 				<li>
-					<a class="active mp-a" href="modifyForm.jsp">
+					<a class="active mp-a" href="mem.do?cmd=modifyForm">
 						정보수정
 						<span class="mp_span">&gt;</span>
 					</a>
@@ -46,22 +46,23 @@
 				</li>
 			</ul>
 
-			<a class="left-a" href="#">
-				<div class="left-bottom">
+			<a class="left-a" href="#">	
+				<div class="left-bottom">			
 					<span>도움이 필요하신가요 ?</span>
-					<span class="left-s">문의하기</span>
-				</div>
+					<span class="left-s">문의하기</span>	
+				</div>		
 			</a>
 		</div>
 
 		<div class="mp_right">
-		<form action="member.do?cmd=modifyProc" method="post" name="regForm">
+		
 			<div class="right-header">
 				<h2>정보수정</h2>
 			</div>
 			
 			<div class="r-border"></div>
-
+			
+			
 			<!-- 정보수정 -->
 			<div class="mp-box">
 				<div class="article-modify">
@@ -77,6 +78,7 @@
 						<div class="center">
 							<input class="c_input" type="hidden" name="id" value="${id}">
 							<c:out value="${id}" />
+							
 						</div>
 						<div class="right">
 							<input class="w_right" type="button">
@@ -153,12 +155,10 @@
 							<label class="l_label">우편번호<span class="red_span">*</span></label>
 						</div>
 						<div class="center">
-							<input class="c_input" type="text" name="zipcode"
-								value="${zipcode}">
+							<input class="c_input" type="text" name="zipcode" value="${zipcode}">
 						</div>
 						<div class="right">
-							<input class="b_right" type="button" value="찾기"
-								onclick="zipCheck()">
+							<input class="b_right" type="button" value="찾기" onclick="zipCheck()">
 						</div>
 					</div>
 
@@ -192,16 +192,15 @@
 					</div>
 
 				</div>
-
+			
 			</div>
-		</form>
+		
 		</div>
 
 	</div>
 
-
 </c:when>
 </c:choose>
-
+</form>
 </body>
 </html>

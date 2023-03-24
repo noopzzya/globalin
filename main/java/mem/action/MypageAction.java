@@ -18,8 +18,8 @@ public class MypageAction implements Action {
 		
 		request.setCharacterEncoding("utf-8");
 		MemberDAO dao = MemberDAO.getInstance();
-		HttpSession session = request.getSession();
 		
+		HttpSession session = request.getSession();
 		String loginID = (String)session.getAttribute("loginID");
 		
 		MemberVO vo = new MemberVO(
@@ -34,7 +34,7 @@ public class MypageAction implements Action {
 			request.getParameter("userlike")
 		);
 		
-		dao.updateMember(vo);
+//		dao.updateMember(vo);
 		
 		return new ActionForward("/mem/mypage.jsp", false);
 	}

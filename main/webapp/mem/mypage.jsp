@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지</title>
+<title>찜리스트</title>
 <link href="mypage.css" rel="stylesheet" type="text/css">
 	
 </head>
@@ -27,14 +27,14 @@
 			<div class="left-header">마이페이지</div>
 			<ul>
 				<li>
-					<a class="active mp-a">
+					<a class="active mp-a" href="mem.do?cmd=mypage">
 						찜리스트
 						<span class="mp_span">&gt;</span>
 					</a>
 				</li>
 
 				<li>
-					<a class="mp-a" href="modifyForm.jsp">
+					<a class="mp-a" href="mem.do?cmd=modifyForm">
 						정보수정
 						<span class="mp_span">&gt;</span>
 					</a>
