@@ -10,7 +10,8 @@ public class MemberDAO {
 	// 싱글톤 생성
 	private static MemberDAO instance = null;
 
-	public MemberDAO() {}
+	// 외부에서 인스턴스 생성을 막기 위해 private 생성자 선언
+	private MemberDAO() {}
 	
 	// 싱글톤 객체 생성
 	public static MemberDAO getInstance() {
