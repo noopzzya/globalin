@@ -17,11 +17,11 @@
 <c:choose>
 <c:when test="${loginID ne null}">
 	<div class="loginok">
+	
 	<c:out value="${loginID}"/>님 환영합니다.<br><br>
-<%-- 	<jsp:forward page="/index"/>  추후 수정--%>
-
+	<jsp:include page="${pageContext.servletContext.contextPath}/included.jsp" />
 		<a href="mem.do?cmd=logout" class="button">로그아웃</a>
-		<a href="mem.do?cmd=mypage" class="button">마이페이지</a>		
+		<a href="mem.do?cmd=mypage" class="button">마이페이지</a>
 	</div>
 </c:when>
 
@@ -69,6 +69,8 @@
 </form>
 </c:otherwise>
 </c:choose>
+
+<jsp:include page="${pageContext.servletContext.contextPath}/included.jsp" />
 
 </body>
 </html>
