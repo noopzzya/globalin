@@ -7,18 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>우편번호 검색</title>
-<style>
-.bt1 {
-	height: 30px;
-    border-radius: 3px;
-    text-align: center;
-    overflow: hidden;
-    width: 50px;
-    color: #2EA26B;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #2EA26B;
-}
-</style>
+<link href="regform.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -26,12 +15,12 @@
 <b>우편번호 찾기</b><br><br>
 <form action="mem.do?cmd=zipCheck" method="post" name="zipForm">
 
-	<table>
+	<table class="ziptable">
 		<tr>
 			<td>
-				동 이름 입력
+				<p>동 이름 입력</p>
 				<input type="text" name="dong">
-				<input class="bt1" type="button" value="검색" onclick="dongCheck()">	
+				<input class="zip_bt1" type="button" value="검색" onclick="dongCheck()">
 			</td>
 		</tr>
 	</table>
@@ -61,7 +50,7 @@
 		
 		<tr>
 			<td align="center">
-				<input class="bt1" type="button" value="닫기" onclick="javascript:window.close()">				
+				<input class="zip_bt2" type="button" value="닫기" onclick="javascript:window.close()">				
 			</td>
 		</tr>
 		

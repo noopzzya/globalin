@@ -9,6 +9,49 @@ function idCheck(id) {
 	}
 }
 
+function searchId() {	
+	if(document.idproc.name.value == ""){
+		alert("이름을 입력해주세요.");
+		document.idproc.name.focus();
+		return false;
+	}
+	
+	if(document.idproc.email.value == ""){
+		alert("이메일을 입력해주세요.");
+		document.idproc.email.focus();
+		return false;
+	}
+	
+	document.idproc.submit();	
+}
+
+function searchPass() {	
+	if(document.passproc.name.value == ""){
+		alert("이름을 입력해주세요.");
+		document.passproc.name.focus();
+		return false;
+	}
+	
+	if(document.passproc.email.value == ""){
+		alert("이메일을 입력해주세요.");
+		document.passproc.email.focus();
+		return false;
+	}
+	
+	if(document.passproc.id.value == ""){
+		alert("아이디를 입력해주세요.");
+		document.passproc.id.focus();
+		return false;
+	}
+	
+	document.passproc.submit();	
+}
+
+function idpopup(){
+	//window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
+	window.open("searchidProc.jsp", "idpopup", "width=450, height=250, top=150, left=200");
+}
+
 function zipCheck(){
 	url="member.do?cmd=zipCheck&check=y";
 	window.open(url,"post","toolbar=no, width=500, height=300, directories=no, status=yes, scrollbars=yes, menubar=no");

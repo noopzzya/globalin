@@ -21,11 +21,8 @@ body {
 div {	
 	width: 640px;
     margin: 0px auto;
-	
 }
 
-.border {
-}
 
 .article {
 	padding-bottom: 10px;
@@ -143,4 +140,30 @@ span {
     background-color: #2EA26B;
     border: 0px none;
     font-size: 15px;
+}
+
+.dong {
+	height: 30px;
+}
+
+.zip_bt1 {
+	height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+    width: 50px;
+    color: #2EA26B;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #2EA26B;
+}
+
+.zip_bt2 {
+	height: 30px;
+    border-radius: 3px;
+    text-align: center;
+    overflow: hidden;
+    width: 50px;
+    color: rgb(255, 255, 255);
+    background-color: #2EA26B;
+    border: 1px solid #2EA26B;
 }
