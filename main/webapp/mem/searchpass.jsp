@@ -12,7 +12,7 @@
 
 <form action="mem.do?cmd=searchpass" name="passproc" method="post">
 	<div class="search-header">
-		<h2>아이디 찾기</h2>
+		<h2>비밀번호 찾기</h2>
 	</div>
 
 	<div class="r-border"></div>

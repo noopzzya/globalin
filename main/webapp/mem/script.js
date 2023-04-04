@@ -47,10 +47,7 @@ function searchPass() {
 	document.passproc.submit();	
 }
 
-function idpopup(){
-	//window.open("[팝업을 띄울 파일명 path]", "[별칭]", "[팝업 옵션]")
-	window.open("searchidProc.jsp", "idpopup", "width=450, height=250, top=150, left=200");
-}
+
 
 function zipCheck(){
 	url="member.do?cmd=zipCheck&check=y";

@@ -472,10 +472,6 @@ public class MemberDAO {
 				pstmt.setString(3, id);
 				rs = pstmt.executeQuery();
 				
-				System.out.println(name);
-				System.out.println(email);
-				System.out.println(id);
-				
 				if(rs.next())
 					pass = rs.getString("pass");
 				
