@@ -17,7 +17,6 @@
 <c:when test="${loginID ne null}">
 
 	<div class="mp-in">
-		<jsp:include page="${pageContext.servletContext.contextPath}/included.jsp" />
 		<c:out value="${loginID}"/>님 환영합니다.
 		<a href="mem.do?cmd=logout" class="button">로그아웃</a>
 	</div>
@@ -203,8 +202,6 @@
 </c:when>
 </c:choose>
 </form>
-
-<jsp:include page="${pageContext.servletContext.contextPath}/included.jsp" />
 
 </body>
 </html>
